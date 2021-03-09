@@ -18,5 +18,11 @@ export default class AnswerController {
         erro: 'Survey user does not exists',
       });
     }
+
+    surveyUser.value = Number(value);
+
+    await surveysUsersRepository.save(surveyUser);
+
+    return response.json(surveyUser);
   }
 }
